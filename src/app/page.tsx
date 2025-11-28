@@ -36,7 +36,7 @@ export default function Home() {
     // 2nd div contains the below (nav bar) + (the greeting componnet + spline) --> stacked col style
     // 3rd div contains the greeting + spline
     <div className ="min-h-screen bg-[#f1eeed] flex items-center justify-center">
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-18">
         <div className = "flex flex-row"> 
           <Hero/>
         </div>
@@ -44,6 +44,10 @@ export default function Home() {
           activeSection={activeSection}
           setActiveSection={setActiveSection}
         />
+
+      <div className="mt-16 w-full max-w-5xl mb-18">
+        {renderSection()}
+      </div>
       </div>
     </div>
   );

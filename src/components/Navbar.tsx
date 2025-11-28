@@ -17,12 +17,12 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
     { id: 'contact', label: 'contact' },
   ];
 
-  // Helper function to get the style for a link
+  // helper function to get the style for a link
   const getLinkClass = (section: Section) => {
-    // These are the styles for ALL links
+    // styles for all links
     let classes = "text-lg text-zinc-400 font-medium cursor-pointer transition-all duration-300";
     
-    // These are the styles for ONLY the ACTIVE link
+    // styles for active link
     if (activeSection === section) {
       classes += " text-zinc-900 underline underline-offset-4";
     } else {
@@ -37,9 +37,7 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
       {navItems.map((item) => (
         <span
           key={item.id}
-          // On click, we call the function from the parent to update the state
           onClick={() => setActiveSection(item.id as Section)}
-          // We dynamically set the classes based on the active state
           className={getLinkClass(item.id as Section)}
         >
           {item.label}
