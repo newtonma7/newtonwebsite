@@ -3,14 +3,15 @@
 import Image from "next/image";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function About(){
     const images = [
-        "/headshot.webp",
-        "/hike1.webp",
-        "/bonsai.webp",
-        "/eugene.webp",
-        "/pony.webp",
+        "/images/headshot.webp",
+        "/images/hike1.webp",
+        "/images/bonsai.webp",
+        "/images/eugene.webp",
+        "/images/pony.webp",
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,55 +29,64 @@ export default function About(){
     };
 
     return (
-        <div className="flex flex-row gap-8 w-237.5">
-            <div className="w-70">
-                <div className="relative w-full aspect-2/3">
-                    <Image 
-                        src={images[currentIndex]} 
-                        alt={`Image ${currentIndex + 1}`}
-                        className="rounded-lg shadow-lg object-cover"
-                        fill
-                    />
-                    
-                    {images.length > 1 && (
+        <div className="flex flex-row gap-8 w-full max-w-[640px] mx-auto items-end">
+            <div className="w-[169px] shrink-0 flex flex-col items-center">
+                <div className="relative w-full aspect-2/3 overflow-hidden rounded-lg shadow-lg">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={images[currentIndex]}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.35, ease: "easeInOut" }}
+                            className="relative w-full h-full"
+                        >
+                            <Image 
+                                src={images[currentIndex]} 
+                                alt={`Image ${currentIndex + 1}`}
+                                className="object-cover"
+                                fill
+                            />
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                {images.length > 1 && (
+                    <div className="mt-3 flex w-full items-center justify-between text-xs text-zinc-500">
                         <button
                             onClick={goToPrevious}
-                            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/15 hover:bg-black/10 text-white rounded-full p-2 transition-all"
+                            className="flex items-center gap-1 rounded-full border border-zinc-300 px-2 py-1 hover:border-red-500 hover:text-zinc-800 transition-colors duration-500"
                             aria-label="Previous image"
                         >
-                            <ChevronLeft className="w-5 h-5" />
+                            <ChevronLeft className="w-4 h-4" />
+                            <span>prev</span>
                         </button>
-                    )}
 
-                    {images.length > 1 && (
+                        <span className="tracking-wide">
+                            {currentIndex + 1} / {images.length}
+                        </span>
+
                         <button
                             onClick={goToNext}
-                            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/15 hover:bg-black/10 text-white rounded-full p-2 transition-all"
+                            className="flex items-center gap-1 rounded-full border border-zinc-300 px-2 py-1 hover:border-red-500 hover:text-zinc-800 transition-colors duration-500"
                             aria-label="Next image"
                         >
-                            <ChevronRight className="w-5 h-5" />
+                            <span>next</span>
+                            <ChevronRight className="w-4 h-4" />
                         </button>
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
             
-            <div className="flex-1 text-zinc-900 flex flex-col gap-4">
-                <h2 className="text-5xl font-bold mb-2">Hey!
-                </h2>
-                <div className=" flex flex-col gap-8 justify-center items-center">
-                    <p className="leading-relaxed text-xl mr-auto">
-                        I&apos;m a Computer Science student at Virginia Tech graduating May 2027.
-                    </p>
-                    <p className="leading-relaxed text-xl">
-                        I&apos;m double majoring in Computer Science and Computational Modeling & Data Analytics.
-                    </p>
-                    <p className="leading-relaxed text-xl">
-                        I&apos;m interested in full stack development, data science, and love to explore new things.
-                    </p>
-                    <p className="leading-relaxed text-xl">
-                        Outside of work, I enjoy lifting, playing tennis, pickleball, thrifting, and listening to music.
-                    </p>
-                    <button className="bg-red-500 font-bold text-white px-4 py-2 rounded-md mt-4 mr-24 mb-4">Resume</button>
+            <div className="flex-1 text-zinc-900 flex flex-col gap-4 mb-6 -translate-y-[20%]">
+                <ul className="flex flex-col gap-3 justify-center items-start list-disc list-inside text-lg leading-normal lowercase mr-auto [&_li]:whitespace-nowrap">
+                    <li>computer science student at virginia tech, graduating <span className="red-underline">may 2027</span></li>
+                    <li>double majoring in computer science and computational modeling & data analytics</li>
+                    <li>interested in full stack development, data science, and exploring new things!</li>
+                    <li>outside of work i enjoy hiking, lifting, tennis, eating, thrifting, and music</li>
+                </ul>
+                <div className="w-full flex justify-center mt-2 mb-2">
+                    <a href="#" className="text-xl resume-link lowercase inline-block mr-[10%]">resume</a>
                 </div>
             </div>
         </div>

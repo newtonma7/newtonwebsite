@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+const junicode = localFont({
+  src: "../../public/fonts/junicode-regular.otf",
+  variable: "--font-junicode",
 });
 
 
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased`}
+        className={`${junicode.variable} antialiased`}
       >
         {children}
       </body>

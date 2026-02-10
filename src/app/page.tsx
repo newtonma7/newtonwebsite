@@ -6,27 +6,24 @@ import NavBar from "@/components/Navbar";
 import { motion } from "motion/react"
 
 import About from '@/components/About';
-import Experiences from '@/components/Experiences';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 
-type Section = 'about' | 'experiences' | 'projects' | 'contact';
+type Section = 'about' | 'projects' | 'contact';
 
 export default function Home() {
-    const [activeSection, setActiveSection] = useState<Section>('experiences');
+    const [activeSection, setActiveSection] = useState<Section | null>(null);
 
     const renderSection = () => {
     switch (activeSection) {
       case 'about':
         return <About />;
-      case 'experiences':
-        return <Experiences />;
       case 'projects':
         return <Projects />;
       case 'contact':
         return <Contact />;
       default:
-        return <About />;
+        return null;
     }
   };
 
@@ -41,14 +38,20 @@ export default function Home() {
           <Hero/>
         </div>
 
+        <div className="h-16 flex items-center justify-center">
+          <hr className="w-108 max-w-[80%] border-t border-zinc-300" />
+        </div>
+
         <NavBar
           activeSection={activeSection}
           setActiveSection={setActiveSection}
         />
 
-        <div className="mt-8 w-full min-h-150flex justify-center items-center">
-          {renderSection()}
-        </div>
+        {activeSection !== null && (
+          <div className="mt-8 w-full min-h-[150px] flex justify-center items-center">
+            {renderSection()}
+          </div>
+        )}
       </div>
     </div>
   );

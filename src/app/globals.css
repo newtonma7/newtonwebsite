@@ -23,5 +23,77 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-junicode), serif;
+}
+
+.resume-link {
+  position: relative;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  width: fit-content;
+}
+.resume-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  background: #ef4444;
+  width: 0;
+  transition: width 0.3s ease;
+}
+.resume-link:hover::after {
+  width: 100%;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+  transition: color 0.6s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  background: #ef4444;
+  width: 0;
+  transition: width 0.6s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.nav-link.active::after {
+  width: 100%;
+}
+/* When hovering a different nav link, hide the active link's underline so only the hovered one shows it */
+nav:has(.nav-link:hover) .nav-link.active:not(:hover)::after {
+  width: 0;
+}
+/* Active link keeps underline when it is the one being hovered (must come after so it wins) */
+.nav-link.active:hover::after {
+  width: 100%;
+}
+/* When hovering another link, fade the active link's text back to gray to match the underline */
+nav:has(.nav-link:hover) .nav-link.active:not(:hover) {
+  color: #a1a1aa; /* zinc-400 */
+}
+
+.red-underline {
+  position: relative;
+  display: inline-block;
+}
+.red-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  background: #ef4444;
+  width: 100%;
 }

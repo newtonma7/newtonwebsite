@@ -1,10 +1,10 @@
 import React from 'react';
 
 // Define the types for the props we're receiving from the parent
-type Section = 'about' | 'experiences' | 'projects' | 'contact';
+type Section = 'about' | 'projects' | 'contact';
 
 interface NavbarProps {
-  activeSection: Section;
+  activeSection: Section | null;
   setActiveSection: (section: Section) => void;
 }
 
@@ -12,28 +12,21 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
   
   const navItems = [
     { id: 'about', label: 'about' },
-    { id: 'experiences', label: 'experiences' },
     { id: 'projects', label: 'projects' },
     { id: 'contact', label: 'contact' },
   ];
 
   // helper function to get the style for a link
   const getLinkClass = (section: Section) => {
-    // styles for all links
-    let classes = "text-lg text-zinc-400 font-medium cursor-pointer transition-all duration-300";
-    
-    // styles for active link
+    let classes = "nav-link text-lg text-zinc-400 font-medium cursor-pointer hover:text-zinc-900";
     if (activeSection === section) {
-      classes += " text-zinc-900 underline underline-offset-4";
-    } else {
-      classes += " hover:text-zinc-900";
+      classes += " active text-zinc-900";
     }
     return classes;
   };
 
   return (
-    // This is the navbar container
-    <nav className="flex flex-row gap-8 mt-16 justify-center">
+    <nav className="flex flex-row gap-8 justify-center">
       {navItems.map((item) => (
         <span
           key={item.id}
