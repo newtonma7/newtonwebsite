@@ -13,7 +13,7 @@ import Contact from '@/components/Contact';
 type Section = 'about' | 'experiences' | 'projects' | 'contact';
 
 export default function Home() {
-    const [activeSection, setActiveSection] = useState<Section>('about');
+    const [activeSection, setActiveSection] = useState<Section>('experiences');
 
     const renderSection = () => {
     switch (activeSection) {
@@ -36,18 +36,19 @@ export default function Home() {
     // 2nd div contains the below (nav bar) + (the greeting componnet + spline) --> stacked col style
     // 3rd div contains the greeting + spline
     <div className ="min-h-screen bg-[#f1eeed] flex items-center justify-center">
-      <div className="flex flex-col mt-18">
-        <div className = "flex flex-row"> 
+      <div className="flex flex-col mt-18 w-full max-w-5xl">
+        <div className = "w-full flex justify-center"> 
           <Hero/>
         </div>
+
         <NavBar
           activeSection={activeSection}
           setActiveSection={setActiveSection}
         />
 
-      <div className="mt-16 w-full max-w-5xl mb-18">
-        {renderSection()}
-      </div>
+        <div className="mt-8 w-full min-h-150flex justify-center items-center">
+          {renderSection()}
+        </div>
       </div>
     </div>
   );
