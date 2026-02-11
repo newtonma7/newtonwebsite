@@ -78,15 +78,15 @@ export default function About(){
                 )}
             </div>
             
-            <div className="flex-1 text-zinc-900 flex flex-col gap-4 mb-6 -translate-y-[20%]">
+            <div className="flex-1 text-zinc-900 flex flex-col gap-4 mb-6 -translate-y-[5%]">
                 <ul className="flex flex-col gap-3 justify-center items-start list-disc list-inside text-lg leading-normal lowercase mr-auto [&_li]:whitespace-nowrap">
                     <li>computer science student at virginia tech, graduating <span className="red-underline">may 2027</span></li>
                     <li>double majoring in computer science and computational modeling & data analytics</li>
                     <li>interested in full stack development, data science, and exploring new things!</li>
                     <li>outside of work i enjoy hiking, lifting, tennis, eating, thrifting, and music</li>
                 </ul>
-                <div className="w-full flex justify-center mt-2 mb-2">
-                    <a href="#" className="text-xl resume-link lowercase inline-block mr-[10%]">resume</a>
+                <div className="w-full flex justify-center mt-4 mb-2">
+                    <a href="#" className="nav-link text-xl text-zinc-900 font-medium lowercase inline-block mr-[10%]">resume</a>
                 </div>
             </div>
         </div>

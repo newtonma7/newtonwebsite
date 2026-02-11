@@ -11,18 +11,35 @@ const projects = [
     description: 'Another brief description. Keep it to one or two lines.',
     techStack: ['Python', 'PostgreSQL'],
   },
+  {
+    name: 'a',
+    description: 'Another brief description. Keep it to one or two lines.',
+    techStack: ['Python', 'PostgreSQL'],
+  },
+  {
+    name: 'anotect',
+    description: 'Another brief description. Keep it to one or two lines.',
+    techStack: ['Python', 'PostgreSQL'],
+  },
+  {
+    name: 'anoject',
+    description: 'Another brief description. Keep it to one or two lines.',
+    techStack: ['Python', 'PostgreSQL'],
+  },
+  
   // Add more projects below:
   // { name: '...', description: '...', techStack: ['...'] },
 ]
 
 export default function Projects() {
   return (
-    <div className="w-full max-w-[640px] mx-auto">
-      <ul className="flex flex-col gap-6 list-none p-0 m-0">
+    <div className="w-full max-w-[640px] flex flex-col items-start pb-24 ml-[max(1rem,calc((100%-36rem)/2))]">
+      {/* keep the column centered under Hero, but text left-aligned */}
+      <ul className="flex flex-col gap-6 list-none p-0 m-0 w-108 max-w-[80%]">
         {projects.map((project) => (
           <li
             key={project.name}
-            className="border-b border-zinc-300 pb-6 last:border-b-0 last:pb-0"
+            className="border-b border-zinc-300 pb-6 last:border-b-0 last:pb-0 w-full"
           >
             <h3 className="text-lg font-medium text-zinc-900 lowercase mb-1">
               {project.name}

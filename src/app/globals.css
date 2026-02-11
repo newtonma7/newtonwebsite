@@ -20,8 +20,16 @@
   }
 }
 
+html {
+  scrollbar-gutter: stable;
+  scrollbar-width: none; /* Firefox - hide native, use custom */
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge - hide native, use custom */
+}
+
 body {
-  background: var(--background);
+  background: #f1eeed;
   color: var(--foreground);
   font-family: var(--font-junicode), serif;
 }

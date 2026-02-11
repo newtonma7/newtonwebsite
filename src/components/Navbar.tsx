@@ -18,7 +18,7 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
 
   // helper function to get the style for a link
   const getLinkClass = (section: Section) => {
-    let classes = "nav-link text-lg text-zinc-400 font-medium cursor-pointer hover:text-zinc-900";
+    let classes = "nav-link text-lg text-zinc-500 font-medium cursor-pointer hover:text-zinc-900";
     if (activeSection === section) {
       classes += " active text-zinc-900";
     }
