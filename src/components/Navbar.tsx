@@ -36,6 +36,14 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
           {item.label}
         </span>
       ))}
+      <a
+        href="https://drive.google.com/file/d/10Zg-ZRomRDV4fU_YlmlJP4EsMRkAdAvC/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="nav-link text-lg text-zinc-500 font-medium cursor-pointer hover:text-zinc-900"
+      >
+        resume
+      </a>
     </nav>
   );
 }

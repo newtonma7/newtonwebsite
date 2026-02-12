@@ -1,9 +1,9 @@
 'use client'
 
 const links = [
-  { id: 'github', label: 'github', href: 'https://github.com/yourusername', external: true },
-  { id: 'linkedin', label: 'linkedin', href: 'https://linkedin.com/in/yourusername', external: true },
-  { id: 'email', label: 'email', href: 'mailto:your@email.com', external: false },
+  { id: 'github', label: 'github', href: 'https://github.com/newtonma7', external: true },
+  { id: 'linkedin', label: 'linkedin', href: 'https://www.linkedin.com/in/newtonma7/', external: true },
+  { id: 'email', label: 'email', href: 'mailto:newtonma7@gmail.com', external: false },
 ]
 
 export default function Contact() {

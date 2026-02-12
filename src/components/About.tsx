@@ -29,8 +29,8 @@ export default function About(){
     };
 
     return (
-        <div className="flex flex-row gap-8 w-full max-w-[640px] mx-auto items-end">
-            <div className="w-[169px] shrink-0 flex flex-col items-center">
+        <div className="flex flex-row gap-8 w-full max-w-[640px] mx-auto items-start -translate-x-12">
+            <div className="w-[190px] shrink-0 flex flex-col items-center">
                 <div className="relative w-full aspect-2/3 overflow-hidden rounded-lg shadow-lg">
                     <AnimatePresence mode="wait">
                         <motion.div
@@ -78,16 +78,22 @@ export default function About(){
                 )}
             </div>
             
-            <div className="flex-1 text-zinc-900 flex flex-col gap-4 mb-6 -translate-y-[5%]">
+            <div className="flex-1 text-zinc-900 flex flex-col gap-4 mb-6">
                 <ul className="flex flex-col gap-3 justify-center items-start list-disc list-inside text-lg leading-normal lowercase mr-auto [&_li]:whitespace-nowrap">
+                    <li>
+                        <span>currently:</span>
+                        <ul className="mt-1 ml-4 flex flex-col gap-1 list-disc list-inside text-lg">
+                            <li>undergraduate researcher at vt</li>
+                            <li>web dev for vt entrepreneurship club</li>
+                            <li>dev for bits at vt</li>
+                            <li>aws-saa certified</li>
+                        </ul>
+                    </li>
                     <li>computer science student at virginia tech, graduating <span className="red-underline">may 2027</span></li>
                     <li>double majoring in computer science and computational modeling & data analytics</li>
-                    <li>interested in full stack development, data science, and exploring new things!</li>
+                    <li>interested in software engineering roles, full stack, applied data science, and exploring new things!</li>
                     <li>outside of work i enjoy hiking, lifting, tennis, eating, thrifting, and music</li>
                 </ul>
-                <div className="w-full flex justify-center mt-4 mb-2">
-                    <a href="#" className="nav-link text-xl text-zinc-900 font-medium lowercase inline-block mr-[10%]">resume</a>
-                </div>
             </div>
         </div>
     )
