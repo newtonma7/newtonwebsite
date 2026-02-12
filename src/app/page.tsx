@@ -110,9 +110,6 @@ export default function Home() {
 
   
   return (
-    // 1st div is the background and centers it all
-    // 2nd div contains the below (nav bar) + (the greeting componnet + spline) --> stacked col style
-    // 3rd div contains the greeting + spline
     <>
     <CustomScrollbar activeSection={activeSection} />
     <div className ="min-h-screen bg-[#f1eeed] flex items-start justify-center pt-24">
