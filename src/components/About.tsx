@@ -5,6 +5,8 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
+const CAROUSEL_WIDTH = 190;
+
 export default function About(){
     const images = [
         "/images/headshot.webp",
@@ -28,10 +30,30 @@ export default function About(){
         );
     };
 
+    const nextIndex = (currentIndex + 1) % images.length;
+    const prevIndex = (currentIndex - 1 + images.length) % images.length;
+
     return (
         <div className="flex flex-row gap-8 w-full max-w-[640px] mx-auto items-start -translate-x-12">
             <div className="w-[190px] shrink-0 flex flex-col items-center">
                 <div className="relative w-full aspect-2/3 overflow-hidden rounded-lg shadow-lg">
+                    {/* Preload next/prev images in background so they're ready when user clicks */}
+                    <div className="absolute inset-0 z-0 opacity-0 pointer-events-none" aria-hidden>
+                        <Image
+                            src={images[nextIndex]}
+                            alt=""
+                            fill
+                            className="object-cover"
+                            sizes={`${CAROUSEL_WIDTH}px`}
+                        />
+                        <Image
+                            src={images[prevIndex]}
+                            alt=""
+                            fill
+                            className="object-cover"
+                            sizes={`${CAROUSEL_WIDTH}px`}
+                        />
+                    </div>
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={images[currentIndex]}
@@ -39,13 +61,15 @@ export default function About(){
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.35, ease: "easeInOut" }}
-                            className="relative w-full h-full"
+                            className="relative w-full h-full z-10"
                         >
-                            <Image 
-                                src={images[currentIndex]} 
+                            <Image
+                                src={images[currentIndex]}
                                 alt={`Image ${currentIndex + 1}`}
                                 className="object-cover"
                                 fill
+                                sizes={`${CAROUSEL_WIDTH}px`}
+                                priority={currentIndex === 0}
                             />
                         </motion.div>
                     </AnimatePresence>
