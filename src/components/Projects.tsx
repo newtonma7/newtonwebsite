@@ -11,8 +11,8 @@ type Project = {
 const projects: Project[] = [
   {
     name: 'Virginia Tech Entrepreneurship Club Website',
-    description: 'Developed and designed a website in collaboration with the web development team, deployed with Vercel',
-    techStack: ['Next.js', 'TypeScript', 'Framer Motion', 'Tailwind CSS', 'Figma'],
+    description: 'Developed and designed in collaboration with the web development team',
+    techStack: ['Next.js', 'TypeScript', 'Framer Motion', 'Figma'],
     liveUrl: 'https://eclubwebsite.vercel.app/',
     // repoUrl: 'https://github.com/you/repo',
   },
@@ -41,8 +41,8 @@ const projectNameClass =
 
 export default function Projects() {
   return (
-    <div className="w-full max-w-[640px] flex flex-col items-start ml-[max(1rem,calc((100%-36rem)/2))]">
-      <ul className="projects-list flex flex-col gap-6 list-none p-0 m-0 w-108 max-w-[80%]">
+    <div className="w-full max-w-5xl mx-auto px-4">
+      <ul className="projects-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 list-none p-0 m-0">
         {projects.map((project) => {
           const href = project.liveUrl || project.repoUrl || '#'
           const showCodeLink = !!(project.liveUrl && project.repoUrl)
@@ -50,9 +50,9 @@ export default function Projects() {
           return (
             <li
               key={project.name}
-              className="border-b border-zinc-300 pb-6 pt-4 first:pt-0 last:border-b-0 last:pb-0 w-full"
+              className="border border-zinc-200 rounded-lg p-5 bg-[#f6f4f3] hover:border-zinc-300 hover:bg-[#f9f8f7] transition-colors duration-300"
             >
-              <h3 className="text-lg font-medium mb-1">
+              <h3 className="text-lg font-medium mb-2">
                 <a
                   href={href}
                   target={href === '#' ? undefined : '_blank'}
@@ -85,7 +85,7 @@ export default function Projects() {
                 {project.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="text-sm text-zinc-500 lowercase px-2 py-0.5 border border-zinc-300 rounded"
+                    className="text-xs text-zinc-500 lowercase px-2 py-0.5 border border-zinc-200 rounded-md"
                   >
                     {tech}
                   </span>
