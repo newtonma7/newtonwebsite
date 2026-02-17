@@ -111,6 +111,7 @@ export default function About(){
                             <li>web dev for vt entrepreneurship club</li>
                             <li>dev for bits at vt</li> 
                             <li>aws-saa certified</li>
+                            <li>training to be a future 10x dev</li>
                         </ul>
                     </li>
                     <li>computer science student at virginia tech, graduating <span className="red-underline">may 2027</span></li>
