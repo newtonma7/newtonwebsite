@@ -110,15 +110,18 @@ export default function About(){
                             <li>
                                 student software developer for vt university libraries
                                 <ul className="mt-1 ml-4 flex flex-col gap-1 list-disc list-inside text-lg">
-                                <span className=" text-zinc-700"><li>building SIP application for data archival</li></span>
+                                <span className=" text-zinc-800"><li>building SIP application for data archival</li></span>
                                 </ul>
                             </li>
                             <li>undergraduate researcher at vt <span className=" text-zinc-400">(BURGS XR vulnerabilities)</span></li>
                             <li>training to be a future 10x dev</li>
                         </ul>
                     </li>
-                    <li>computer science student at virginia tech, graduating <span className="red-underline">may 2027</span></li>
-                    <li>double majoring in computer science and computational modeling & data analytics</li>
+                    <li>student at virginia tech, graduating <span className="red-underline">may 2027</span>
+                        <ul className="mt-1 ml-4 flex flex-col gap-1 list-disc list-inside text-lg">
+                        <span className=" text-zinc-800"><li>double major in computer science and computational modeling & data analytics</li></span>
+                        </ul>
+                    </li>
                     <li>interested in software engineering roles, full stack, applied data science, and exploring new things!</li>
                     <li>outside of work i enjoy hiking, lifting, tennis, eating, thrifting, and music</li>
                 </ul>
