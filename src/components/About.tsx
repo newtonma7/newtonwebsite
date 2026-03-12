@@ -107,10 +107,13 @@ export default function About(){
                     <li>
                         <span>currently:</span>
                         <ul className="mt-1 ml-4 flex flex-col gap-1 list-disc list-inside text-lg">
-                            <li>undergraduate researcher at vt <span className=" text-zinc-400">(XR vulnerabilities)</span></li>
-                            <li>web dev for vt entrepreneurship club</li>
-                            <li>dev for bits at vt</li> 
-                            <li>aws-saa certified</li>
+                            <li>
+                                student software developer for vt university libraries
+                                <ul className="mt-1 ml-4 flex flex-col gap-1 list-disc list-inside text-lg">
+                                <span className=" text-zinc-700"><li>building SIP application for data archival</li></span>
+                                </ul>
+                            </li>
+                            <li>undergraduate researcher at vt <span className=" text-zinc-400">(BURGS XR vulnerabilities)</span></li>
                             <li>training to be a future 10x dev</li>
                         </ul>
                     </li>

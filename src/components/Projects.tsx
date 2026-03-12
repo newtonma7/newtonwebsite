@@ -61,6 +61,12 @@ const projects: Project[] = [
     // repoUrl: 'https://github.com/you/repo',
   },
   {
+    name: 'knot',
+    description: 'RAG AI-powered study tool that transforms materials into traceable practice sets and gap analysis',
+    techStack: ['Next.js', 'Node.js', 'Snowflake', 'Gemini', 'Python'],
+    liveUrl: 'https://devpost.com/software/knot-7rwyu5',
+  },
+  {
     name: 'Rotrack',
     description: 'Full-stack web app for productivity tracking and goal management',
     techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Docker'],
