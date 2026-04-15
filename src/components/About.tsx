@@ -117,13 +117,13 @@ export default function About(){
                             <li>training to be a future 10x dev</li>
                         </ul>
                     </li>
-                    <li>student at virginia tech, graduating <span className="red-underline">may 2027</span>
+                    <li>cs student at virginia tech, graduating <span className="red-underline">may 2027</span>
                         <ul className="mt-1 ml-4 flex flex-col gap-1 list-disc list-inside text-lg">
-                        <span className=" text-zinc-800"><li>double major in computer science and computational modeling & data analytics</li></span>
+                        <span className=" text-zinc-800"><li>B.S. in computer science + math minor </li></span>
                         </ul>
                     </li>
-                    <li>interested in software engineering roles, full stack, applied data science, and exploring new things!</li>
-                    <li>outside of work i enjoy hiking, lifting, tennis, eating, thrifting, and music</li>
+                    <li>interested in cloud development, webdev, and building distributed, scalable systems</li>
+                    <li>outside of work i enjoy eating, hiking, and music!</li>
                 </ul>
             </div>
         </div>

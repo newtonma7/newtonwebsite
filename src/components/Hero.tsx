@@ -44,7 +44,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 1.35 }}
         >
-          cs & cmda at vt
+          cs & math at vt
         </motion.p>
       </motion.div>
     </div>
