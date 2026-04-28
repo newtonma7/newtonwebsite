@@ -37,7 +37,7 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
         </span>
       ))}
       <a
-        href="https://drive.google.com/file/d/1FXPfW3b13IN-MQJvBij6oeY9XaRL0UYj/view?usp=sharing"
+        href="https://drive.google.com/file/d/1B08BNXilY-REqaMupkNsIW74KZjH1zHA/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="nav-link text-lg text-zinc-500 font-medium cursor-pointer hover:text-zinc-900"
