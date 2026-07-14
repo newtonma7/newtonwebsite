@@ -108,12 +108,12 @@ export default function About(){
                         <span>currently:</span>
                         <ul className="mt-1 ml-4 flex flex-col gap-1 list-disc list-inside text-lg">
                             <li>
-                                student software developer for vt university libraries
+                                federal software developer intern at IBM
                                 <ul className="mt-1 ml-4 flex flex-col gap-1 list-disc list-inside text-lg">
-                                <span className=" text-zinc-800"><li>building SIP application for data archival</li></span>
+                                {/*<span className=" text-zinc-800"><li>building SIP application for data archival</li></span>*/}
                                 </ul>
                             </li>
-                            <li>undergraduate researcher at vt <span className=" text-zinc-400">(BURGS XR vulnerabilities)</span></li>
+                            {/*<li>undergraduate researcher at vt <span className=" text-zinc-400">(BURGS XR vulnerabilities)</span></li>}*/}
                             <li>training to be a future 10x dev</li>
                         </ul>
                     </li>
@@ -122,7 +122,7 @@ export default function About(){
                         <span className=" text-zinc-800"><li>B.S. in computer science + math minor </li></span>
                         </ul>
                     </li>
-                    <li>interested in cloud development, webdev, and building distributed, scalable systems</li>
+                    <li>interested in full-stack, agentic ai + ML, and web design</li>
                     <li>outside of work i enjoy eating, hiking, and music!</li>
                 </ul>
             </div>
