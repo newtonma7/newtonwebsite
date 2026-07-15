@@ -35,7 +35,12 @@ export default function About(){
 
     return (
         <div className="w-full flex justify-center">
-          <div className="flex flex-row gap-8 items-stretch rounded-2xl border border-zinc-200/40 bg-white/5 backdrop-blur-sm shadow-[0_1px_4px_rgba(0,0,0,0.05)] px-8 py-8">
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex flex-row gap-8 items-stretch rounded-2xl border border-zinc-200/40 bg-white/5 backdrop-blur-sm shadow-[0_1px_4px_rgba(0,0,0,0.05)] px-8 py-8"
+          >
             <div className="w-[190px] shrink-0 flex flex-col items-center pb-[25px]">
                 <div className="relative w-full flex-1 min-h-0 overflow-hidden rounded-lg shadow-lg">
                     {/* Preload next/prev images in background so they're ready when user clicks */}
@@ -55,7 +60,7 @@ export default function About(){
                             sizes={`${CAROUSEL_WIDTH}px`}
                         />
                     </div>
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence mode="wait" initial={false}>
                         <motion.div
                             key={images[currentIndex]}
                             initial={{ opacity: 0, y: 10 }}
@@ -139,7 +144,7 @@ export default function About(){
                     </ul>
                 </section>
             </div>
-          </div>
+          </motion.div>
         </div>
     )
 }
