@@ -34,7 +34,8 @@ export default function About(){
     const prevIndex = (currentIndex - 1 + images.length) % images.length;
 
     return (
-        <div className="flex flex-row gap-8 w-full max-w-[640px] mx-auto items-stretch justify-center">
+        <div className="w-full flex justify-center">
+          <div className="flex flex-row gap-8 items-stretch rounded-2xl border border-zinc-200/40 bg-white/5 backdrop-blur-sm shadow-[0_1px_4px_rgba(0,0,0,0.05)] px-8 py-8">
             <div className="w-[190px] shrink-0 flex flex-col items-center pb-[25px]">
                 <div className="relative w-full flex-1 min-h-0 overflow-hidden rounded-lg shadow-lg">
                     {/* Preload next/prev images in background so they're ready when user clicks */}
@@ -102,7 +103,7 @@ export default function About(){
                 )}
             </div>
             
-            <div className="flex-1 text-zinc-900 flex flex-col gap-6 mb-6 lowercase">
+            <div className="w-[420px] text-zinc-900 flex flex-col gap-6 lowercase">
                 <section className="flex flex-col gap-2">
                     <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
                         currently
@@ -138,6 +139,7 @@ export default function About(){
                     </ul>
                 </section>
             </div>
+          </div>
         </div>
     )
 }
