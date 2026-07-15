@@ -34,9 +34,9 @@ export default function About(){
     const prevIndex = (currentIndex - 1 + images.length) % images.length;
 
     return (
-        <div className="flex flex-row gap-8 w-full max-w-[640px] mx-auto items-start -translate-x-12">
-            <div className="w-[190px] shrink-0 flex flex-col items-center">
-                <div className="relative w-full aspect-2/3 overflow-hidden rounded-lg shadow-lg">
+        <div className="flex flex-row gap-8 w-full max-w-[640px] mx-auto items-stretch justify-center">
+            <div className="w-[190px] shrink-0 flex flex-col items-center pb-[25px]">
+                <div className="relative w-full flex-1 min-h-0 overflow-hidden rounded-lg shadow-lg">
                     {/* Preload next/prev images in background so they're ready when user clicks */}
                     <div className="absolute inset-0 z-0 opacity-0 pointer-events-none" aria-hidden>
                         <Image
@@ -102,29 +102,41 @@ export default function About(){
                 )}
             </div>
             
-            <div className="flex-1 text-zinc-900 flex flex-col gap-4 mb-6">
-                <ul className="flex flex-col gap-3 justify-center items-start list-disc list-inside text-lg leading-normal lowercase mr-auto [&_li]:whitespace-nowrap">
-                    <li>
-                        <span>currently:</span>
-                        <ul className="mt-1 ml-4 flex flex-col gap-1 list-disc list-inside text-lg">
-                            <li>
-                                federal software developer intern at IBM
-                                <ul className="mt-1 ml-4 flex flex-col gap-1 list-disc list-inside text-lg">
-                                {/*<span className=" text-zinc-800"><li>building SIP application for data archival</li></span>*/}
-                                </ul>
-                            </li>
-                            {/*<li>undergraduate researcher at vt <span className=" text-zinc-400">(BURGS XR vulnerabilities)</span></li>}*/}
-                            <li>training to be a future 10x dev</li>
-                        </ul>
-                    </li>
-                    <li>cs student at virginia tech, graduating <span className="red-underline">may 2027</span>
-                        <ul className="mt-1 ml-4 flex flex-col gap-1 list-disc list-inside text-lg">
-                        <span className=" text-zinc-800"><li>B.S. in computer science + math minor </li></span>
-                        </ul>
-                    </li>
-                    <li>interested in full-stack, agentic ai + ML, and web design</li>
-                    <li>outside of work i enjoy eating, hiking, and music!</li>
-                </ul>
+            <div className="flex-1 text-zinc-900 flex flex-col gap-6 mb-6 lowercase">
+                <section className="flex flex-col gap-2">
+                    <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
+                        currently
+                    </h3>
+                    <hr className="border-t border-zinc-200" />
+                    <ul className="flex flex-col gap-1.5 list-disc list-inside text-lg leading-snug marker:text-zinc-900">
+                        <li>federal software developer intern at IBM</li>
+                        <li>break through tech AI fellow + code path alum</li>
+                        <li>training to be a future 10x dev</li>
+                    </ul>
+                </section>
+
+                <section className="flex flex-col gap-2">
+                    <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
+                        education
+                    </h3>
+                    <hr className="border-t border-zinc-200" />
+                    <ul className="flex flex-col gap-1.5 list-disc list-inside text-lg leading-snug marker:text-zinc-900">
+                        <li>cs student at virginia tech, graduating <span className="red-underline">may 2027</span></li>
+                        <li>B.S. in computer science + math minor</li>
+                        <li>aws solutions architect certified (AWS-SAA)</li>
+                    </ul>
+                </section>
+
+                <section className="flex flex-col gap-2">
+                    <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
+                        other
+                    </h3>
+                    <hr className="border-t border-zinc-200" />
+                    <ul className="flex flex-col gap-1.5 list-disc list-inside text-lg leading-snug marker:text-zinc-900">
+                        <li>interested in full-stack, agentic ai + ML, and web design</li>
+                        <li>outside of work i enjoy eating, hiking, and music!</li>
+                    </ul>
+                </section>
             </div>
         </div>
     )
