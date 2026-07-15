@@ -46,14 +46,24 @@ export default function Home() {
     const [transitionOpacity, setTransitionOpacity] = useState(1);
     const scrollStartYRef = useRef(0);
 
-    // smooth, non-jittery transition when leaving projects
+    // smooth, non-jittery transition whenever the page is scrolled down:
+    // scroll back to the top first so the hero stays anchored in place,
+    // then swap the section once we reach the top.
     const handleSetActiveSection = (section: Section) => {
-      if (activeSection === 'projects' && typeof window !== 'undefined') {
-        scrollStartYRef.current = window.scrollY || 0;
+      const currentY =
+        typeof window !== 'undefined'
+          ? window.scrollY || window.pageYOffset || 0
+          : 0;
+
+      if (currentY > 0) {
+        // scale the scroll duration to the distance so short scrolls feel
+        // snappy and long scrolls stay smooth (clamped between 300–600ms).
+        const duration = Math.round(Math.min(600, Math.max(300, currentY * 0.5)));
+        scrollStartYRef.current = currentY;
         setPendingSection(section);
         setIsScrollingToTop(true);
         setTransitionOpacity(1);
-        smoothScrollToTop(600);
+        smoothScrollToTop(duration);
       } else {
         setActiveSection(section);
       }
