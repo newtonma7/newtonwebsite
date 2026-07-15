@@ -110,7 +110,7 @@ export default function About(){
             
             <div className="w-[420px] text-zinc-900 flex flex-col gap-6 lowercase">
                 <section className="flex flex-col gap-2">
-                    <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
+                    <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
                         currently
                     </h3>
                     <hr className="border-t border-zinc-200" />
@@ -122,7 +122,7 @@ export default function About(){
                 </section>
 
                 <section className="flex flex-col gap-2">
-                    <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
+                    <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
                         education
                     </h3>
                     <hr className="border-t border-zinc-200" />
@@ -134,8 +134,8 @@ export default function About(){
                 </section>
 
                 <section className="flex flex-col gap-2">
-                    <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
-                        other
+                    <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
+                        misc.
                     </h3>
                     <hr className="border-t border-zinc-200" />
                     <ul className="flex flex-col gap-1.5 list-disc list-inside text-lg leading-snug marker:text-zinc-900">
