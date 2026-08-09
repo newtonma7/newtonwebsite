@@ -73,6 +73,11 @@ body {
   width: 0;
   transition: width 0.6s ease;
 }
+
+/* Navbar links have touch-target padding; keep their underline close to the label. */
+nav > .nav-link::after {
+  bottom: 8px;
+}
 .nav-link:hover::after {
   width: 100%;
 }
