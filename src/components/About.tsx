@@ -132,7 +132,7 @@ export default function About(){
                     <div className="mt-3 flex w-full items-center justify-between text-xs text-zinc-500">
                         <button
                             onClick={goToPrevious}
-                            className="flex min-h-11 items-center gap-1 rounded-full border border-zinc-300 px-2.5 py-1.5 hover:border-[#E31637] hover:text-zinc-800 transition-colors duration-500"
+                            className="flex min-h-0 items-center gap-1 rounded-full border border-zinc-300 px-2 py-1 text-xs hover:border-[#E31637] hover:text-zinc-800 transition-colors duration-500"
                             aria-label="Previous image"
                         >
                             <ChevronLeft className="w-4 h-4" />
@@ -145,7 +145,7 @@ export default function About(){
 
                         <button
                             onClick={goToNext}
-                            className="flex min-h-11 items-center gap-1 rounded-full border border-zinc-300 px-2.5 py-1.5 hover:border-[#E31637] hover:text-zinc-800 transition-colors duration-500"
+                            className="flex min-h-0 items-center gap-1 rounded-full border border-zinc-300 px-2 py-1 text-xs hover:border-[#E31637] hover:text-zinc-800 transition-colors duration-500"
                             aria-label="Next image"
                         >
                             <span>next</span>
