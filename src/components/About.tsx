@@ -39,10 +39,10 @@ export default function About(){
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-row gap-8 items-stretch rounded-2xl border border-zinc-200/40 bg-white/5 backdrop-blur-sm shadow-[0_1px_4px_rgba(0,0,0,0.05)] px-8 py-8"
+            className="flex w-full flex-col gap-8 rounded-2xl sm:w-auto border border-zinc-200/40 bg-white/5 px-5 py-6 shadow-[0_1px_4px_rgba(0,0,0,0.05)] backdrop-blur-sm sm:flex-row sm:items-stretch sm:px-8 sm:py-8"
           >
-            <div className="w-[190px] shrink-0 flex flex-col items-center pb-[25px]">
-                <div className="relative w-full flex-1 min-h-0 overflow-hidden rounded-lg shadow-lg">
+            <div className="flex w-full max-w-[260px] shrink-0 flex-col items-center self-center sm:w-[190px] sm:max-w-none sm:self-auto sm:pb-[25px]">
+                <div className="relative aspect-[2/3] w-full overflow-hidden rounded-lg shadow-lg sm:aspect-auto sm:min-h-0 sm:flex-1">
                     {/* Preload next/prev images in background so they're ready when user clicks */}
                     <div className="absolute inset-0 z-0 opacity-0 pointer-events-none" aria-hidden>
                         <Image
@@ -108,7 +108,7 @@ export default function About(){
                 )}
             </div>
             
-            <div className="w-[420px] text-zinc-900 flex flex-col gap-6 lowercase">
+            <div className="w-full text-zinc-900 flex flex-col gap-6 lowercase sm:w-[420px]">
                 <section className="flex flex-col gap-2">
                     <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
                         currently

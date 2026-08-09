@@ -122,7 +122,7 @@ export default function Home() {
   return (
     <>
     <CustomScrollbar activeSection={activeSection} />
-    <div className ="min-h-screen bg-[#f1eeed] flex items-start justify-center pt-24">
+    <div id="page-content" className ="min-h-screen w-full overflow-x-clip bg-[#f1eeed] px-4 sm:px-6 flex items-start justify-center pt-12 sm:pt-24">
       <div className="flex flex-col mt-8 w-full max-w-5xl">
         <div className = "w-full flex justify-center"> 
           <Hero/>

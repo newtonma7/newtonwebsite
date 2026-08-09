@@ -84,13 +84,22 @@ export default function CustomScrollbar({ activeSection }: CustomScrollbarProps)
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
-          className="fixed right-0 top-0 bottom-0 w-[14px] z-50 flex justify-center py-2 pointer-events-none"
+          className="fixed right-0 top-0 bottom-0 z-50 hidden w-[14px] justify-center py-2 pointer-events-none sm:flex"
         >
           <div
             className="relative w-full h-full min-h-[100px] rounded-full bg-[#f1eeed] cursor-pointer pointer-events-auto"
             onClick={handleTrackClick}
             role="scrollbar"
             aria-label="Scrollbar"
+            aria-controls="page-content"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(
+              (Number.parseFloat(thumbStyle.top) /
+                Math.max(1, 100 - Number.parseFloat(thumbStyle.height))) *
+                100
+            )}
+            aria-orientation="vertical"
           >
             <div
               className="absolute left-[3px] right-[3px] rounded-full bg-[#d4d0ce] hover:bg-[#b8b4b2] transition-colors duration-150 cursor-grab active:cursor-grabbing min-h-[20px]"

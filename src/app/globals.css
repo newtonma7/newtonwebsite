@@ -123,6 +123,23 @@ nav:has(.nav-link:hover) .nav-link.active:not(:hover)::after {
 .nav-link.active:hover::after {
   width: 100%;
 }
+.nav-link:focus-visible {
+  outline: 2px solid #E31637;
+  outline-offset: 4px;
+}
+
+/* Keep native scrolling available on touch-sized screens. */
+@media (max-width: 639px) {
+  html {
+    scrollbar-gutter: auto;
+    scrollbar-width: auto;
+  }
+
+  html::-webkit-scrollbar {
+    display: block;
+    width: auto;
+  }
+}
 /* When hovering another link, fade the active link's text back to gray to match the underline */
 nav:has(.nav-link:hover) .nav-link.active:not(:hover) {
   color: #a1a1aa; /* zinc-400 */
