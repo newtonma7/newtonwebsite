@@ -37,6 +37,18 @@ const projects: Project[] = [
     liveUrl: 'https://devpost.com/software/clarify-nqv5zy',
     repoUrl: 'https://github.com/aykk/lifeline'
   },
+  {
+    name: 'rotrack',
+    description: 'Personal study and productivity tracker for focused work and recovery sessions',
+    techStack: ['Next.js', 'TypeScript', 'Spring Boot', 'Java', 'Supabase', 'PostgreSQL'],
+    repoUrl: 'https://github.com/newtonma7/rotrack'
+  },
+  {
+    name: 'lazycook',
+    description: 'Pantry and recipe app that helps you cook with what you already have',
+    techStack: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Framer Motion'],
+    repoUrl: 'https://github.com/newtonma7/lazycook'
+  },
 
   // Add more projects below. Optional: liveUrl, repoUrl (open in new tab).
   // { name: '...', description: '...', techStack: ['...'], liveUrl: '...', repoUrl: '...' },
