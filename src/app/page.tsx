@@ -1,6 +1,7 @@
 'use client'
 
 import React, {useEffect, useRef, useState} from 'react';
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import NavBar from "@/components/Navbar";
 import { AnimatePresence, motion } from "motion/react"
@@ -122,6 +123,19 @@ export default function Home() {
   return (
     <>
     <CustomScrollbar activeSection={activeSection} />
+    <motion.div
+      className="fixed right-4 top-4 z-40 sm:right-6 sm:top-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.2, ease: "easeOut", delay: 2.1 }}
+    >
+      <Link
+        href="/blog"
+        className="cursor-pointer text-sm text-zinc-400 lowercase transition-colors hover:text-zinc-900"
+      >
+        blog
+      </Link>
+    </motion.div>
     <div id="page-content" className ="min-h-screen w-full overflow-x-clip bg-[#f1eeed] px-4 sm:px-6 flex items-start justify-center pt-12 sm:pt-24">
       <div className="flex flex-col mt-8 w-full max-w-5xl">
         <div className = "w-full flex justify-center"> 

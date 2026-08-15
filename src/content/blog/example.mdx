@@ -1,0 +1,62 @@
+---
+# ─────────────────────────────────────────────────────────────
+# FRONTMATTER — required. everything between the --- lines.
+# the filename becomes the url slug: this file is /blog/example
+# ─────────────────────────────────────────────────────────────
+title: "example post: how to write one"        # shown as the heading + in the index/sidebar
+date: "2026-08-15"                              # YYYY-MM-DD — controls order + the "aug 2026" label
+tags: ["meta", "guide"]                         # optional; used for grouping/metadata
+excerpt: "a reference post showing every formatting feature — copy this file, change the frontmatter, and start writing."
+---
+
+this is a normal paragraph. write in plain markdown and it renders as calm,
+readable serif body text. to start a new post, duplicate this file, rename it
+(the new name is the url), update the frontmatter above, and delete everything
+below.
+
+leave a blank line between paragraphs. a single line break inside a paragraph is
+ignored, so you can wrap your text however you like in the editor and it will
+still flow as one paragraph.
+
+## headings
+
+use `##` for section headings — that renders as the lowercase heading you see
+above. keep to `##` for sections; the post title (an `#`/h1) comes from the
+frontmatter automatically, so don't add your own top-level heading.
+
+## inline formatting
+
+you can make text _italic_ with underscores for emphasis, wrap short bits of
+`inline code` in single backticks, and add [a link](https://example.com) with
+markdown link syntax (links get a subtle red underline).
+
+## lists
+
+bulleted lists use dashes:
+
+- one idea per line
+- markers are small and black
+- keep them short and parallel
+
+## quotes
+
+use `>` for a pull quote — good for a single striking sentence:
+
+> the goal is to make the words the loudest thing on the page.
+
+## code blocks
+
+fence code with triple backticks and a language name for syntax highlighting
+(powered by shiki). specify the language right after the opening backticks:
+
+```ts
+// a fenced code block with a language tag gets highlighted
+function greet(name: string): string {
+  return `hello, ${name}`;
+}
+
+const message = greet("world");
+console.log(message);
+```
+
+that's everything. delete this content, keep the frontmatter shape, and write.
