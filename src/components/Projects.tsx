@@ -63,7 +63,7 @@ export default function Projects() {
   return (
     <div className="w-full max-w-5xl mx-auto px-4">
       <ul className="projects-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 list-none p-0 m-0">
-        {projects.map((project) => {
+        {[...projects].reverse().map((project) => {
           const titleHref = project.liveUrl || project.repoUrl || '#'
           const hasLiveUrl = !!project.liveUrl
           const hasRepoUrl = !!project.repoUrl

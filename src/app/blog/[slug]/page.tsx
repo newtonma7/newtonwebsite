@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogArticle from "@/components/blog/BlogArticle";
+import { getPostComponent } from "@/content/blog/load-posts";
 import { getPostMeta, getSlugs } from "@/lib/blog";
 
 export function generateStaticParams() {
@@ -28,9 +29,8 @@ export default async function BlogPostPage({
 }) {
   const { slug } = await params;
   const meta = getPostMeta(slug);
-  if (!meta) notFound();
-
-  const { default: Post } = await import(`@/content/blog/${slug}.mdx`);
+  const Post = getPostComponent(slug);
+  if (!meta || !Post) notFound();
 
   return (
     <BlogArticle title={meta.title} dateLabel={meta.dateLabel}>

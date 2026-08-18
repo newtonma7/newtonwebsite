@@ -169,7 +169,7 @@ nav:has(.nav-link:hover) .nav-link.active:not(:hover) {
   color: #3f3f46; /* zinc-700 */
 }
 .blog-prose p {
-  margin: 1.25rem 0;
+  margin: 0 0 1.5rem;
   font-size: 1.075rem;
   line-height: 1.85;
 }

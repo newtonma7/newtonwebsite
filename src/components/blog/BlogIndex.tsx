@@ -35,7 +35,7 @@ export default function BlogIndex({ posts }: { posts: PostMeta[] }) {
 
         <header className="mb-16">
           <h1 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-            writing
+            posts
           </h1>
           <p className="mt-3 text-lg lowercase text-zinc-500">
             writing to fight against ai brain drain

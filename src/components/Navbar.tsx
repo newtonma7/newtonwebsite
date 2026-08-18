@@ -38,7 +38,7 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
         </button>
       ))}
       <a
-        href="https://drive.google.com/file/d/1B08BNXilY-REqaMupkNsIW74KZjH1zHA/view?usp=sharing"
+        href="https://drive.google.com/file/d/1eWZNyYtMI4m_Ity_prsn6yw0RXKRsJcR/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="nav-link min-h-11 px-1 py-2 text-lg text-zinc-500 font-medium cursor-pointer hover:text-zinc-900"
