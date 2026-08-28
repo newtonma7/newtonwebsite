@@ -16,8 +16,8 @@ const aboutSections: AboutSection[] = [
     {
         title: "currently",
         items: [
-            "federal software developer intern at IBM",
-            "break through tech AI fellow + code path alum",
+            "break through tech AI fellow at Cyera",
+            "prev federal software developer intern at IBM",
             "training to be a future 10x dev",
         ],
     },
@@ -32,7 +32,7 @@ const aboutSections: AboutSection[] = [
     {
         title: "misc.",
         items: [
-            "interested in full-stack, agentic ai + ML, and web design",
+            "interested in full-stack, agentic ai + ML, and startup opportunities",
             "outside of work i enjoy eating, hiking, and music!",
         ],
     },

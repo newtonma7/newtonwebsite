@@ -45,12 +45,35 @@ export default function Home() {
     const [pendingSection, setPendingSection] = useState<Section | null>(null);
     const [isScrollingToTop, setIsScrollingToTop] = useState(false);
     const [transitionOpacity, setTransitionOpacity] = useState(1);
+    const [hasInteracted, setHasInteracted] = useState(false);
+    const [hintReady, setHintReady] = useState(false);
     const scrollStartYRef = useRef(0);
+
+    // reveal the "about" hint only after the initial intro animations settle
+    useEffect(() => {
+      const timer = setTimeout(() => setHintReady(true), 2200);
+      return () => clearTimeout(timer);
+    }, []);
+
+    // clicking any interactable element (button/link) dismisses the hint for
+    // good — plain background clicks are ignored.
+    useEffect(() => {
+      if (hasInteracted) return;
+      const dismiss = (e: PointerEvent) => {
+        const target = e.target as Element | null;
+        if (target?.closest('button, a')) setHasInteracted(true);
+      };
+      window.addEventListener('pointerdown', dismiss);
+      return () => window.removeEventListener('pointerdown', dismiss);
+    }, [hasInteracted]);
+
+    const showAboutHint = hintReady && !hasInteracted;
 
     // smooth, non-jittery transition whenever the page is scrolled down:
     // scroll back to the top first so the hero stays anchored in place,
     // then swap the section once we reach the top.
     const handleSetActiveSection = (section: Section) => {
+      setHasInteracted(true);
       const currentY =
         typeof window !== 'undefined'
           ? window.scrollY || window.pageYOffset || 0
@@ -159,6 +182,7 @@ export default function Home() {
           <NavBar
             activeSection={pendingSection != null ? pendingSection : activeSection}
             setActiveSection={handleSetActiveSection}
+            showAboutHint={showAboutHint}
           />
         </motion.div>
 
