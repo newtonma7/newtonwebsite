@@ -3,6 +3,7 @@
 const links = [
   { id: 'github', label: 'github', href: 'https://github.com/newtonma7', external: true },
   { id: 'linkedin', label: 'linkedin', href: 'https://www.linkedin.com/in/newtonma7/', external: true },
+  { id: 'twitter', label: 'twitter', href: 'https://x.com/zuotmau', external: true },
   { id: 'email', label: 'email', href: 'mailto:newtonma7@gmail.com', external: false },
 ]
 
